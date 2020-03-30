@@ -1,0 +1,135 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .w3-bar-block .w3-bar-item {padding:20px}
+    </style>
+
+ <!-- First Photo Grid-->
+ <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[0].id)" src="{{ this.getImageUrl(0) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[0].id)">{{ page.results[0].title }}</h3>
+      <p>{{ page.results[0].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[1].id)" src="{{ this.getImageUrl(1) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[1].id)">{{page.results[1].title}}</h3>
+      <p>{{ page.results[1].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[2].id)" src="{{ this.getImageUrl(2) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[2].id)">{{page.results[2].title}}</h3>
+      <p>{{ page.results[2].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[3].id)" src="{{ this.getImageUrl(3) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[3].id)">{{page.results[3].title}}</h3>
+      <p>{{ page.results[3].overview }}</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[4].id)" src="{{ this.getImageUrl(4) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[4].id)" >{{page.results[4].title}}</h3>
+      <p>{{ page.results[4].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[5].id)" src="{{ this.getImageUrl(5) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[5].id)" >{{page.results[5].title}}</h3>
+      <p>{{ page.results[5].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[6].id)" src="{{ this.getImageUrl(6) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[6].id)" >{{page.results[6].title}}</h3>
+      <p>{{ page.results[6].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[7].id)" src="{{ this.getImageUrl(7) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[7].id)" >{{page.results[7].title}}</h3>
+      <p>{{ page.results[7].overview }}</p>
+    </div>
+  </div>
+  <!-- Third Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[8].id)" src="{{ this.getImageUrl(8) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[8].id)" >{{page.results[8].title}}</h3>
+      <p>{{ page.results[8].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[9].id)" src="{{ this.getImageUrl(9) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[9].id)" >{{page.results[9].title}}</h3>
+      <p>{{ page.results[9].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[10].id)" src="{{ this.getImageUrl(10) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[10].id)" >{{page.results[10].title}}</h3>
+      <p>{{ page.results[10].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[11].id)" src="{{ this.getImageUrl(11) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[11].id)" >{{page.results[11].title}}</h3>
+      <p>{{ page.results[11].overview }}</p>
+    </div>
+  </div><!-- Fourth Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[12].id)" src="{{ this.getImageUrl(12) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[12].id)">{{page.results[12].title}}</h3>
+      <p>{{ page.results[12].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[13].id)" src="{{ this.getImageUrl(13) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[13].id)">{{page.results[13].title}}</h3>
+      <p>{{ page.results[13].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[14].id)" src="{{ this.getImageUrl(14) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[14].id)">{{page.results[14].title}}</h3>
+      <p>{{ page.results[14].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[15].id)" src="{{ this.getImageUrl(15) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[15].id)">{{page.results[15].title}}</h3>
+      <p>{{ page.results[15].overview }}</p>
+    </div>
+  </div><!-- Fifth Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[16].id)" src="{{ this.getImageUrl(16) }}"style="width:100%">
+      <h3 (click)="getMovie(page.results[16].id)">{{page.results[16].title}}</h3>
+      <p>{{ page.results[16].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[17].id)" src="{{ this.getImageUrl(17) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[17].id)">{{page.results[17].title}}</h3>
+      <p>{{ page.results[17].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[18].id)" src="{{ this.getImageUrl(18) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[18].id)">{{page.results[18].title}}</h3>
+      <p>{{ page.results[18].overview }}</p>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(page.results[19].id)" src="{{ this.getImageUrl(19) }}" style="width:100%">
+      <h3 (click)="getMovie(page.results[19].id)">{{page.results[19].title}}</h3>
+      <p>{{ page.results[19].overview }}</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="/page/{{this.pageNum - 1}}" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="/page/{{this.pageNum}}" class="w3-bar-item w3-black w3-button">{{this.pageNum}}</a>
+      <a href="/page/{{this.pageNum + 1}}" class="w3-bar-item w3-button w3-hover-black">{{this.pageNum + 1}}</a>
+      <a href="/page/{{this.pageNum + 2}}"class="w3-bar-item w3-button w3-hover-black">{{this.pageNum + 2}}</a>
+      <a href="/page/{{this.pageNum + 3}}" class="w3-bar-item w3-button w3-hover-black">{{this.pageNum + 3}}</a>
+      <a href="/page/{{this.pageNum + 1}}" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  <p>Page:{{page.page}} Total results: {{page.total_results}} Total Pages: {{page.total_pages}}</p>
+

@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+<style>
+body {
+    background-image: 
+url('{{ getBackdrop() }}');
+}
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .w3-bar-block .w3-bar-item {padding:20px}
+</style>
+
+<h1>{{ this.movie.title }}</h1>
+<div class="w3-quarter">
+    <img src="{{ getImageUrl() }}" style="width:100%">
+
+
+    <h2>Similar Movies</h2>
+</div>
+<p>{{ this.movie.overview }}</p>
+
+<div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[0].id)" src="{{ this.getSimilarImageUrl(0) }}"style="width:100%">
+      <a href="/movie/{{similarMovies.results[0].id}}" >{{similarMovies.results[0].title}}</a>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[1].id)" src="{{ this.getSimilarImageUrl(1) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[1].id)">{{similarMovies.results[1].title}}</h3>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[2].id)" src="{{ this.getSimilarImageUrl(2) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[2].id)">{{similarMovies.results[2].title}}</h3>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[3].id)" src="{{ this.getSimilarImageUrl(3) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[3].id)">{{similarMovies.results[3].title}}</h3>
+    </div>
+  </div>
