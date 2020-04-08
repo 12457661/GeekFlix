@@ -7,3 +7,26 @@
 <a href="/">
     <h1 class="w3-center">GeekFlix</h1>
 </a>
+
+<div *ngIf="loggedIn(); else elseBlock">
+    <nz-breadcrumb>
+        <nz-breadcrumb-item>
+            <a (click)="getUser()">Welcome {{ user.username }}  </a>
+
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+            <a (click)="logOut()">  Logout</a>
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+</div>
+<ng-template #elseBlock>
+    <nz-breadcrumb>
+        <nz-breadcrumb-item>
+            <a href="/login">Login </a>
+
+        </nz-breadcrumb-item>
+        <nz-breadcrumb-item>
+            <a href="/register">Register</a>
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+</ng-template>

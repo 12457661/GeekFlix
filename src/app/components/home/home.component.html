@@ -1,12 +1,11 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
 <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     .w3-bar-block .w3-bar-item {padding:20px}
     </style>
 
  <!-- First Photo Grid-->
- <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+ <div class="w3-row-padding w3-padding-16 w3-center" id="movies">
     <div class="w3-quarter">
       <img (click)="getMovie(page.results[0].id)" src="{{ this.getImageUrl(0) }}" style="width:100%">
       <h3 (click)="getMovie(page.results[0].id)">{{ page.results[0].title }}</h3>
@@ -130,6 +129,11 @@
       <a href="/page/{{this.pageNum + 3}}" class="w3-bar-item w3-button w3-hover-black">{{this.pageNum + 3}}</a>
       <a href="/page/{{this.pageNum + 1}}" class="w3-bar-item w3-button w3-hover-black">»</a>
     </div>
+    <!--
+    <nz-pagination [nzPageIndex]="page.page" [nzTotal]="page.total_pages" (nzPageIndexChange)="getPage([nzPageIndex])"></nz-pagination>
+    -->
+
   </div>
+
   <p>Page:{{page.page}} Total results: {{page.total_results}} Total Pages: {{page.total_pages}}</p>
 

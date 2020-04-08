@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Page } from '../../models/Page';
 import { PageService } from '../../services/page.service';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
+import { Movie } from '../../models/Movie';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +17,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.pageNum = parseInt(params.get('id'));
-      console.log("Page: " + this.pageNum);
     });
     this.pg.getPage(this.pageNum).subscribe(page => {
       this.page = page;
-      console.log("what page is this: " + page.page);
     });
   }
 

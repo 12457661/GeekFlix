@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
+import { User } from '../../../models/User';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -8,14 +10,27 @@ import {ActivatedRoute, Router, ParamMap} from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  user:User = null;
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+    this.user = this.userService.getLoggedInUser();
   }
 
   getHome(): void {
-    this.router.navigate(['/']);
+    location.reload();
+  }
 
+  loggedIn(): boolean {
+    return this.user != null;
+  }
+
+  logOut() {
+    this.userService.logOut();
+    location.reload();
+  }
+
+  getUser() {
+    this.router.navigate(['user',this.user.id]);
   }
 }

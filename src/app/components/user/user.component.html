@@ -1,0 +1,23 @@
+<h1>Profile</h1>
+<h2>Movies ranked by emotion</h2>
+
+<div class="container">
+<nz-table *ngFor= "let emotion of user.moviesWithEmotion" [nzData]="emotion.movies" [nzFrontPagination]="false" [nzShowPagination]="false">
+    <thead>
+      <tr>
+        <th>{{ emotion.emotion }}</th>
+      </tr>
+    </thead>
+    <tbody cdkDropList (cdkDropListDropped)="drop($event, emotion.emotion)">
+      <tr *ngFor="let movie of emotion.movies" cdkDrag>
+        <td (click)="openMovie(movie.id)">
+          <div class="">
+            <img src="{{ getImageUrl(movie.poster_path) }}" width="50" height="50"/>
+          </div>
+          <div>            {{ movie.title }}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

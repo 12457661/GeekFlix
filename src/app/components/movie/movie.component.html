@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-
 <style>
 body {
     background-image: 
@@ -10,19 +7,104 @@ url('{{ getBackdrop() }}');
     .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 
-<h1>{{ this.movie.title }}</h1>
+<h2>{{ movie.title }}</h2>
 <div class="w3-quarter">
     <img src="{{ getImageUrl() }}" style="width:100%">
-
-
-    <h2>Similar Movies</h2>
 </div>
+
 <p>{{ this.movie.overview }}</p>
 
-<div class="w3-row-padding w3-padding-16 w3-center">
+<p>&nbsp;&nbsp;</p>
+<h3 style="text-align: center;">Emotions</h3>
+
+
+
+
+
+
+<table style="height: 200px; margin-left: auto; margin-right: auto;" width="400">
+  <tbody>
+  <tr>
+  <td style="width: 100px;"><img (click)="unoSwitchCard('happy')" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Emoji_with_Smiling_Eyes_large.png?v=1571606035" width="100" height="100" /></td>
+  <td style="width: 100px;"><img (click)="unoSwitchCard('sad')" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Disappointed_but_Relieved_Face_Emoji_large.png?v=1571606037" width="100" height="100" /></td>
+  <td style="width: 100px;"><img (click)="unoSwitchCard('wow')" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Surprised_Face_Emoji_7113e110-82a7-493a-9bb1-7bdca77a661a_large.png?v=1571606036" width="100" height="100" /></td>
+  <td style="width: 100px;"><img (click)="unoSwitchCard('crazy')" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Confounded_Face_Emoji_large.png?v=1571606037" width="100" height="100" /></td>
+  </tr>
+  <tr>
+  <td style="width: 100px; text-align: center;">
+    <label nz-checkbox [(ngModel)]="happy"></label>
+  </td>
+  <td style="width: 100px; text-align: center;">
+    <label nz-checkbox [(ngModel)]="sad"></label>
+  </td>
+  <td style="width: 100px; text-align: center;">
+    <label nz-checkbox [(ngModel)]="wow"></label>
+  </td>
+  <td style="width: 100px; text-align: center;">
+    <label nz-checkbox [(ngModel)]="crazy"></label>
+  </td>
+  </tr>
+  <tr style="text-align: center;">
+  <td style="width: 100px; text-align: center;">{{ this.getEmotions('happy') }}</td>
+  <td style="width: 100px; text-align: center;">{{ this.getEmotions('sad') }}</td>
+  <td style="width: 100px; text-align: center;">{{ this.getEmotions('wow') }}</td>
+  <td style="width: 100px; text-align: center;">{{ this.getEmotions('crazy') }}</td>
+  </tr>
+  </tbody>
+  </table>
+
+
+  <h2>Similar Movies</h2>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <a href="/movie/{{similarMovies.results[0].id}}">
+      <div class="w3-quarter">
+        <img (click)="getMovie(similarMovies.results[0].id)" src="{{ this.getSimilarImageUrl(0) }}" style="width:100%">
+        <h3 (click)="getMovie(similarMovies.results[0].id)">{{similarMovies.results[0].title}}</h3>
+      </div>
+    </a>
+    <a href="/movie/{{similarMovies.results[1].id}}">
+
     <div class="w3-quarter">
-      <img (click)="getMovie(similarMovies.results[0].id)" src="{{ this.getSimilarImageUrl(0) }}"style="width:100%">
-      <a href="/movie/{{similarMovies.results[0].id}}" >{{similarMovies.results[0].title}}</a>
+      <img (click)="getMovie(similarMovies.results[1].id)" src="{{ this.getSimilarImageUrl(1) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[1].id)">{{similarMovies.results[1].title}}</h3>
+    </div>
+  </a>
+  <a href="/movie/{{similarMovies.results[2].id}}">
+
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[2].id)" src="{{ this.getSimilarImageUrl(2) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[2].id)">{{similarMovies.results[2].title}}</h3>
+    </div>
+  </a>
+  <a href="/movie/{{similarMovies.results[3].id}}">
+
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[3].id)" src="{{ this.getSimilarImageUrl(3) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[3].id)">{{similarMovies.results[3].title}}</h3>
+    </div>
+  </a>
+  <a href="/movie/{{similarMovies.results[4].id}}">
+
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[4].id)" src="{{ this.getSimilarImageUrl(4) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[4].id)">{{similarMovies.results[4].title}}</h3>
+    </div>
+  </a>
+  <a href="/movie/{{similarMovies.results[5].id}}">
+
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[5].id)" src="{{ this.getSimilarImageUrl(5) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[5].id)">{{similarMovies.results[5].title}}</h3>
+    </div>
+  </a>
+
+  </div>
+  <!--
+    <h2>Similar Movies</h2>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[0].id)" src="{{ this.getSimilarImageUrl(0) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[0].id)">{{similarMovies.results[0].title}}</h3>
     </div>
     <div class="w3-quarter">
       <img (click)="getMovie(similarMovies.results[1].id)" src="{{ this.getSimilarImageUrl(1) }}" style="width:100%">
@@ -36,4 +118,13 @@ url('{{ getBackdrop() }}');
       <img (click)="getMovie(similarMovies.results[3].id)" src="{{ this.getSimilarImageUrl(3) }}" style="width:100%">
       <h3 (click)="getMovie(similarMovies.results[3].id)">{{similarMovies.results[3].title}}</h3>
     </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[4].id)" src="{{ this.getSimilarImageUrl(4) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[4].id)">{{similarMovies.results[4].title}}</h3>
+    </div>
+    <div class="w3-quarter">
+      <img (click)="getMovie(similarMovies.results[5].id)" src="{{ this.getSimilarImageUrl(5) }}" style="width:100%">
+      <h3 (click)="getMovie(similarMovies.results[5].id)">{{similarMovies.results[5].title}}</h3>
+    </div>
   </div>
+-->

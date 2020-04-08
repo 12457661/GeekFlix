@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {PageService} from './services/page.service'
 
 @Component({
   selector: 'app-root',
